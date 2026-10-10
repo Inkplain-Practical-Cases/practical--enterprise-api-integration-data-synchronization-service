@@ -46,7 +46,14 @@
       "started_at": "2026-10-10T14:59:18.244Z",
       "finished_at": "2026-10-10T14:59:18.244Z",
       "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "content": {
+      "status": "in_progress",
+      "summary": "Creating source-grounded Overview, six STEP groups and Conclusion; verifying CRD and simulator references.",
+      "started_at": "2026-10-10T15:03:11.647Z",
+      "finished_at": null,
+      "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T14:59:18.244Z"
+  "updated_at": "2026-10-10T15:03:11.647Z"
 }
