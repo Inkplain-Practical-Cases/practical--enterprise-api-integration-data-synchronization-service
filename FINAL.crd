@@ -5,7 +5,7 @@
   "generated_at": "2026-10-10T14:45:00Z",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--enterprise-api-integration-data-synchronization-service",
-    "revision": "step-06",
+    "revision": "main",
     "roots": {
       "backend": "app"
     },
@@ -76,7 +76,7 @@
       "attributes": {
         "endpoint": "POST /sync"
       },
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.handle_request",
@@ -195,7 +195,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_validate",
@@ -235,7 +235,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.SyncRequest",
@@ -275,7 +275,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_fetch_pages",
@@ -315,7 +315,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_map_records",
@@ -355,7 +355,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_upsert_records",
@@ -395,7 +395,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_retry_policy",
@@ -435,7 +435,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_reconcile",
@@ -475,17 +475,17 @@
         }
       ],
       "attributes": {},
-      "step_change": "added"
+      "step_change": "unchanged"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "step": {
-    "no": 6,
+    "no": "final",
     "of": 6,
-    "title": "Reconcile synchronized state",
-    "branch": "step-06-reconcile-synchronized-state",
-    "previous": "STEP-5.crd",
+    "title": "Final version",
+    "branch": "main",
+    "previous": "STEP-6.crd",
     "removed": []
   }
 }
