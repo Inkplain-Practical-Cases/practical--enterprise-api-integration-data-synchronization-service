@@ -1,0 +1,279 @@
+{
+  "crd_version": 1,
+  "name": "Enterprise API Sync STEP-2",
+  "description": "Fetch cursor pages",
+  "generated_at": "2026-10-10T14:45:00Z",
+  "source": {
+    "repo": "https://github.com/Inkplain-Practical-Cases/practical--enterprise-api-integration-data-synchronization-service",
+    "revision": "step-02",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "flows": [
+    {
+      "id": "pipeline",
+      "name": "Synchronize",
+      "description": "Tenant-scoped synchronization",
+      "entry": "be.submit"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.submit",
+      "name": "submit",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "description": "Implements submit in the incremental data-sync workflow.",
+      "flows": [
+        "pipeline"
+      ],
+      "source": {
+        "file": "app/features/feature_pipeline/router.py",
+        "symbol": "submit",
+        "lines": [
+          1,
+          40
+        ]
+      },
+      "owner": "feature_pipeline",
+      "component_reason": "Observed application request-path component",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input",
+          "name": "state",
+          "description": "Tenant-scoped sync request or intermediate state"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-0",
+          "title": "handle_request",
+          "origin": "imported",
+          "description": "Delegates to handle_request",
+          "show": true,
+          "calls": {
+            "component": "be.handle_request",
+            "type": "call",
+            "label": "executes",
+            "evidence": "app/features/feature_pipeline/router.py: call to handle_request"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "state",
+          "description": "Validated or transformed sync state"
+        }
+      ],
+      "attributes": {
+        "endpoint": "POST /sync"
+      },
+      "step_change": "changed"
+    },
+    {
+      "id": "be.handle_request",
+      "name": "handle_request",
+      "kind": "function",
+      "side": "backend",
+      "layer": "handler",
+      "description": "Implements handle_request in the incremental data-sync workflow.",
+      "flows": [
+        "pipeline"
+      ],
+      "source": {
+        "file": "app/features/feature_pipeline/handlers/handle_request.py",
+        "symbol": "handle_request",
+        "lines": [
+          1,
+          40
+        ]
+      },
+      "owner": "feature_pipeline",
+      "component_reason": "Observed application request-path component",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input",
+          "name": "state",
+          "description": "Tenant-scoped sync request or intermediate state"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-0",
+          "title": "service_validate",
+          "origin": "imported",
+          "description": "Delegates to service_validate",
+          "show": true,
+          "calls": {
+            "component": "be.service_validate",
+            "type": "call",
+            "label": "executes",
+            "evidence": "app/features/feature_pipeline/handlers/handle_request.py: call to service_validate"
+          }
+        },
+        {
+          "id": "op-1",
+          "title": "service_fetch_pages",
+          "origin": "imported",
+          "description": "Delegates to service_fetch_pages",
+          "show": true,
+          "calls": {
+            "component": "be.service_fetch_pages",
+            "type": "call",
+            "label": "executes",
+            "evidence": "app/features/feature_pipeline/handlers/handle_request.py: call to service_fetch_pages"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "state",
+          "description": "Validated or transformed sync state"
+        }
+      ],
+      "attributes": {},
+      "step_change": "changed"
+    },
+    {
+      "id": "be.service_validate",
+      "name": "service_validate",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Implements service_validate in the incremental data-sync workflow.",
+      "flows": [
+        "pipeline"
+      ],
+      "source": {
+        "file": "app/features/feature_pipeline/services/service_validate.py",
+        "symbol": "service_validate",
+        "lines": [
+          1,
+          40
+        ]
+      },
+      "owner": "feature_pipeline",
+      "component_reason": "Observed application request-path component",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input",
+          "name": "state",
+          "description": "Tenant-scoped sync request or intermediate state"
+        }
+      ],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "state",
+          "description": "Validated or transformed sync state"
+        }
+      ],
+      "attributes": {},
+      "step_change": "changed"
+    },
+    {
+      "id": "be.SyncRequest",
+      "name": "SyncRequest",
+      "kind": "class",
+      "side": "backend",
+      "layer": "schema",
+      "description": "Implements SyncRequest in the incremental data-sync workflow.",
+      "flows": [
+        "pipeline"
+      ],
+      "source": {
+        "file": "app/features/feature_pipeline/schemas/request.py",
+        "symbol": "SyncRequest",
+        "lines": [
+          1,
+          40
+        ]
+      },
+      "owner": "feature_pipeline",
+      "component_reason": "Observed application request-path component",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input",
+          "name": "state",
+          "description": "Tenant-scoped sync request or intermediate state"
+        }
+      ],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "state",
+          "description": "Validated or transformed sync state"
+        }
+      ],
+      "attributes": {},
+      "step_change": "changed"
+    },
+    {
+      "id": "be.service_fetch_pages",
+      "name": "service_fetch_pages",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Implements service_fetch_pages in the incremental data-sync workflow.",
+      "flows": [
+        "pipeline"
+      ],
+      "source": {
+        "file": "app/features/feature_pipeline/services/service_fetch_pages.py",
+        "symbol": "service_fetch_pages",
+        "lines": [
+          1,
+          40
+        ]
+      },
+      "owner": "feature_pipeline",
+      "component_reason": "Observed application request-path component",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input",
+          "name": "state",
+          "description": "Tenant-scoped sync request or intermediate state"
+        }
+      ],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "result",
+          "name": "state",
+          "description": "Validated or transformed sync state"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    }
+  ],
+  "dependencies": [],
+  "unresolved": [],
+  "step": {
+    "no": 2,
+    "of": 6,
+    "title": "Fetch cursor pages",
+    "branch": "step-02-fetch-cursor-pages",
+    "previous": "STEP-1.crd",
+    "removed": []
+  }
+}

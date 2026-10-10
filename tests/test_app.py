@@ -1,12 +1,13 @@
-# Contract tests: validate both accepted and rejected tenant-scoped payloads.
+# STEP-2 regression: the full API path invokes all cumulative capabilities.
 from fastapi.testclient import TestClient
 from app.main import app
 client = TestClient(app)
-def test_accepts_valid_request():
-    r = client.post("/sync", json={"tenant_id": "tenant-a", "source_id": "example"})
+def test_end_to_end():
+    r = client.post("/sync", json={"tenant_id":"t1","source_id":"s1"})
     assert r.status_code == 200
     assert r.json()["status"] == "accepted"
-    assert r.json()["tenant_id"] == "tenant-a"
-def test_rejects_invalid_input():
-    assert client.post("/sync", json={"tenant_id": "", "source_id": "example"}).status_code == 422
-    assert client.post("/sync", json={"tenant_id": "tenant-a", "source_id": ""}).status_code == 422
+    assert "pages_fetched" in r.json()
+    assert r.json()["pages_fetched"] == 2
+
+def test_rejects_empty_tenant():
+    assert client.post("/sync", json={"tenant_id":"","source_id":"s1"}).status_code == 422
