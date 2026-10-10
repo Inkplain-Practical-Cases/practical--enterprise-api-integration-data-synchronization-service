@@ -1,0 +1,38 @@
+{
+  "practical_case": {
+    "id": "LRmv0QvSm2tN3uj3pjhN",
+    "slug": "enterprise-api-integration-data-synchronization-service",
+    "name": "Enterprise API Integration & Data Synchronization Service"
+  },
+  "current": "inkp",
+  "stages": {
+    "intro": {
+      "status": "done",
+      "summary": "Junior FDE profile and skill links, seven substantial introduction sections and distinct visual cover confirmed by MCP read-back.",
+      "outputs": {
+        "portal_url": "/practical-case/enterprise-api-integration-data-synchronization-service",
+        "profile": "forward-deployed-engineering",
+        "level": "junior",
+        "intro_sections": 7,
+        "cover_url": "https://firebasestorage.googleapis.com/v0/b/pds-production-test.firebasestorage.app/o/knowledge%2Flibrary%2F1791643084775_enterprise-api-integration-data-synchronization-service-cover.png?alt=media&token=7cf8b9b0-bf99-4bf6-902d-24364fdf1cc4"
+      },
+      "started_at": "2026-10-10T14:38:52.478Z",
+      "finished_at": "2026-10-10T14:38:52.478Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "repo": {
+      "status": "done",
+      "summary": "Six cumulative branch implementations with STEP-N.md/CRD, promoted final main with FINAL.crd, GitHub Actions pytest success on six branches and main.",
+      "started_at": "2026-10-10T14:41:04.530Z",
+      "finished_at": "2026-10-10T14:57:03.246Z",
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "outputs": {
+        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--enterprise-api-integration-data-synchronization-service",
+        "steps": 6,
+        "ci_success": 7,
+        "ci_total": 7
+      }
+    }
+  },
+  "updated_at": "2026-10-10T14:57:03.246Z"
+}
