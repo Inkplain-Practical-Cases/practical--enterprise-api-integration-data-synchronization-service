@@ -1,18 +1,5 @@
-# Enterprise API Integration & Data Synchronization Service
+# enterprise-api-integration-data-synchronization-service
 
-Junior FDE enterprise REST API synchronization: OAuth2, pagination, retries, idempotency, conflict reconciliation, monitoring.
+Junior FDE cumulative practical case. Install with `python -m pip install -r requirements.txt`, run `uvicorn app.main:app --reload` and validate with `pytest -q`.
 
-An Inkplain practical case: a real project built step by step.
-
-## How this repository works
-
-Every step of the lesson has its own branch, and each one contains all steps up to it:
-
-```bash
-git clone https://github.com/Inkplain-Practical-Cases/practical--enterprise-api-integration-data-synchronization-service.git
-cd practical--enterprise-api-integration-data-synchronization-service
-git branch -r            # list the step branches
-git checkout step-01-…   # code after step 1
-```
-
-`main` holds the final, complete version.
+STEP-1 introduces a typed tenant-scoped HTTP contract. Later branches extend functionality while retaining earlier tests.
