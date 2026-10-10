@@ -4,7 +4,7 @@
     "slug": "enterprise-api-integration-data-synchronization-service",
     "name": "Enterprise API Integration & Data Synchronization Service"
   },
-  "current": "content",
+  "current": "done",
   "stages": {
     "intro": {
       "status": "done",
@@ -48,12 +48,19 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     },
     "content": {
-      "status": "in_progress",
-      "summary": "Creating source-grounded Overview, six STEP groups and Conclusion; verifying CRD and simulator references.",
+      "status": "done",
+      "summary": "Eight active categories and 35 public lessons confirmed; six STEP groups of four, source-linked GitHub, CRD trees and INKP visualization read back. Educational fixture limitations documented.",
       "started_at": "2026-10-10T15:03:11.647Z",
-      "finished_at": null,
-      "updated_by": "api-key:for-chatgpt-test-2"
+      "finished_at": "2026-10-10T15:31:18.949Z",
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "outputs": {
+        "portal_url": "/practical-case/enterprise-api-integration-data-synchronization-service",
+        "categories": 8,
+        "items": 35,
+        "step_items": 24,
+        "structural_qa": true
+      }
     }
   },
-  "updated_at": "2026-10-10T15:03:11.647Z"
+  "updated_at": "2026-10-10T15:31:18.949Z"
 }
