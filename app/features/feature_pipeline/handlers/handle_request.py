@@ -4,9 +4,11 @@ from app.features.feature_pipeline.services.service_validate import service_vali
 from app.features.feature_pipeline.services.service_fetch_pages import service_fetch_pages
 from app.features.feature_pipeline.services.service_map_records import service_map_records
 from app.features.feature_pipeline.services.service_upsert_records import service_upsert_records
+from app.features.feature_pipeline.services.service_retry_policy import service_retry_policy
 def handle_request(body: SyncRequest) -> dict:
     state = service_validate(body.model_dump())
     state = service_fetch_pages(state)
     state = service_map_records(state)
     state = service_upsert_records(state)
+    state = service_retry_policy(state)
     return state
