@@ -49,7 +49,7 @@
     },
     "content": {
       "status": "done",
-      "summary": "Final source audit: service_upsert_records() simulates idempotent downstream upsert by populating state['persisted'] in one request-local Python dictionary. It creates no database schema; no .erd or database lesson is applicable.",
+      "summary": "STEP-6 real SQLite sync API request/event audit ERD, FINAL.erd, Simulator diagram and portal Database item added with read-back.",
       "started_at": "2026-10-10T15:03:11.647Z",
       "finished_at": "2026-10-10T15:31:18.949Z",
       "updated_by": "api-key:for-chatgpt-test-2",
@@ -60,11 +60,14 @@
         "step_items": 24,
         "structural_qa": true,
         "erd_audit_complete": true,
-        "erd_applicable_steps": [],
-        "erd_not_applicable": true,
-        "erd_lessons_created": 0
+        "erd_applicable_steps": [
+          6
+        ],
+        "erd_not_applicable": false,
+        "erd_lessons_created": 1,
+        "erd_item_title": "Database (Entity) Relations"
       }
     }
   },
-  "updated_at": "2026-10-13T13:46:06.260Z"
+  "updated_at": "2026-10-13T16:11:14.109Z"
 }
