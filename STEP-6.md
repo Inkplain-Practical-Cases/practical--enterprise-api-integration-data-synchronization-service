@@ -14,3 +14,6 @@ def service_reconcile(state: dict) -> dict:
 
 ## Diagram
 See STEP-6.crd. The final `.inkp` is created after Stage 2.
+
+## Database (Entity) Relations
+Source-backed SQLite sync HTTP request/outcome metadata, linked by FK. See STEP-6.erd and STEP-6-ERD.
