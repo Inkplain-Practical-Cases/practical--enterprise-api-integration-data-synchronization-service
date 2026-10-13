@@ -1,0 +1,71 @@
+{
+  "erd_version": 1,
+  "name": "enterprise-api-integration-data-synchronization-service",
+  "step": "final",
+  "engine": "sqlite",
+  "generated_from": [
+    "app/providers/provider_record_request_audit.py",
+    "app/core/request_audit_middleware.py",
+    "app/main.py"
+  ],
+  "entities": [
+    {
+      "name": "sync_api_requests",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/providers/provider_record_request_audit.py",
+      "description": "Synchronization service API request metadata, no original customer datasets.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "key": "PK"
+        },
+        {
+          "name": "route",
+          "type": "TEXT"
+        },
+        {
+          "name": "method",
+          "type": "TEXT"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ]
+    },
+    {
+      "name": "sync_api_events",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/providers/provider_record_request_audit.py",
+      "description": "HTTP request outcome events linked by a foreign key.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "key": "PK"
+        },
+        {
+          "name": "request_id",
+          "type": "TEXT",
+          "references": "sync_api_requests.id"
+        },
+        {
+          "name": "http_status",
+          "type": "INTEGER"
+        },
+        {
+          "name": "duration_ms",
+          "type": "REAL"
+        },
+        {
+          "name": "occurred_at",
+          "type": "TEXT"
+        }
+      ]
+    }
+  ],
+  "relations": []
+}
